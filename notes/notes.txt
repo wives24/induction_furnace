@@ -1,0 +1,6 @@
+
+
+
+Material
+- glass tube for interior of toroids: https://www.mcmaster.com/4100N17/
+- aluminum cladding for toroids: https://www.mcmaster.com/9056K42-9056K421/

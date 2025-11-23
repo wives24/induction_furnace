@@ -1,0 +1,22 @@
+name: IF_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - black
+  - jupyter
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - pymoo
+  - myst-nb
+  - pip
+  - ipykernel  # for jupyter kernel
+  - ipython  # interactive python shell
+  - ipympl  # interactive matplotlib in jupyter
+  - pip:
+      - pyfemm
+      - lcapy
+      - openpyxl
+      - git-filter-repo  # for git history cleanup

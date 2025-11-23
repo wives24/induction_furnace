@@ -1,0 +1,41 @@
+{
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": [
+                "--login",
+                "-i"
+            ],
+            "icon": "terminal-bash"
+        }
+    },
+    "terminal.integrated.env.windows": {
+        "CONDA_DEFAULT_ENV": "IF_env"
+    },
+    "terminal.integrated.shellIntegration.enabled": true,
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": true,
+    "outline.showVariables": false, // Hide variables in the outline view
+    "outline.showFunctions": true, // Hide functions in the outline view
+    "outline.showConstants": false, // Hide constants in the outline view
+    "outline.showModules": true, // Hide modules in the outline view
+    "outline.showClasses": true, // Hide classes in the outline view
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120,
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#cccccc"
+    },
+    "black-formatter.args": [
+        "--line-length=88"
+    ],
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120,
+    },
+    "workbench.tree.indent": 20,
+}

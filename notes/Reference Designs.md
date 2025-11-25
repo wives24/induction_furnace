@@ -32,3 +32,4 @@ Current Sense Transformer
 	- may be hard to ensure sufficient BW and extremely high turns ratio
 	- core should not add significant inductance to the heating current loop
 	- 1000A - 10mA (100k turns, I dont think so)
+

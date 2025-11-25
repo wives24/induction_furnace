@@ -23,7 +23,7 @@ Film Resonant Caps
 - 
 
 
-I think I want a soft saturating, high permeability core (with no gap), because I don't necessarily want any energy storage in the transformer, but rather just a impedance transform between the higher voltage, lower current primary
+I think I want a high permeability core (with no gap), because I don't necessarily want any energy storage in the transformer, but rather just a impedance transform between the higher voltage, lower current primary
 - KoolMu has a very slow soft saturation, which is great for CCM PFC or single quadrant operation as in a boost or flyback, but not great for resonant converters, because the nonlinearity would introduce hard to model harmonics
 
 

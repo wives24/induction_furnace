@@ -326,7 +326,7 @@ def make_coil_windings_magnetic(coil_config, turn_rz, skin_depth=1.0):
     femm.mi_makeABC()
 
 
-def make_crucible_magnetic(coil_config):
+def make_crucible_magnetic(coil_config, include_crucible=False):
     """makes the crucible geometry for a magnetic simulation
     Args
         coil_config: dictionary of coil parameters
@@ -335,18 +335,25 @@ def make_crucible_magnetic(coil_config):
     crucible_r_outer = coil_config["crucible"]["r_o"]
     crucible_height = coil_config["crucible"]["h"]
 
-    # draw crucible as a rectangle
-    femm.mi_drawrectangle(
-        crucible_r_inner,
-        -crucible_height / 2,
-        crucible_r_outer,
-        crucible_height / 2,
-    )
-    femm.mi_addblocklabel(
-        (crucible_r_inner + crucible_r_outer) / 2, 0
-    )  # center of crucible
-    femm.mi_selectlabel((crucible_r_inner + crucible_r_outer) / 2, 0)
-    femm.mi_setblockprop("Graphite", 0, 0.01, "<None>", 0, 0, 1)
+    if include_crucible:
+        # draw crucible as a rectangle
+        femm.mi_drawrectangle(
+            crucible_r_inner,
+            -crucible_height / 2,
+            crucible_r_outer,
+            crucible_height / 2,
+        )
+        femm.mi_addblocklabel(
+            (crucible_r_inner + crucible_r_outer) / 2, 0
+        )  # center of crucible
+        femm.mi_selectlabel((crucible_r_inner + crucible_r_outer) / 2, 0)
+        femm.mi_setblockprop("Graphite", 0, 0.01, "<None>", 0, 0, 1)
+        femm.mi_clearselected()
+
+    # add air label 5mm above the crucible at r = crucible_r_inner/2
+    femm.mi_addblocklabel(crucible_r_inner / 2, crucible_height / 2 + 0.005)
+    femm.mi_selectlabel(crucible_r_inner / 2, crucible_height / 2 + 0.005)
+    femm.mi_setblockprop("Air", 0, 0.01, "<None>", 0, 0, 1)
     femm.mi_clearselected()
 
 
@@ -383,7 +390,7 @@ def coil_impedance_sim(coil_config, f_arr, hide_window=False):
         # make coil windings using available function
         make_coil_windings_magnetic(coil_config, turn_rz, skin_depth=skin_depth)
 
-        # make_crucible_magnetic(coil_config)
+        make_crucible_magnetic(coil_config, include_crucible=False)
 
         # save temporary file
         temp_filename = f"coil_sim_{f_idx}.fem"

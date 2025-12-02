@@ -1,0 +1,13 @@
+coil:
+  tube_dr: 10.0e-3
+  tube_dz: 14.5e-3
+  tube_radius: 3.0e-3
+  tube_t: 0.7e-3
+  winding_r: 45.0e-3
+  winding_pitch: 17.5e-3
+  N_turns: 7
+crucible:
+  r_o: 30.0e-3
+  r_i: 24.0e-3
+  rho_e: 5.0e-6  #  [Ohm*m]
+  h: 150.0e-3

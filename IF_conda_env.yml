@@ -9,6 +9,7 @@ dependencies:
   - numpy
   - pandas
   - scipy
+  - control
   - pymoo
   - myst-nb
   - pip

@@ -11,17 +11,13 @@ Functions for interfacing with the FEMM software for simulating magnetic compone
 """
 
 
-def init_magnetic_problem(coil_config, f=0.0, hide_window=True):
+def init_coil_magnetic_problem(f=0.0, hide_window=True):
     """initializes an ac magnetics problem in femm for testing a two winding system with the
     a primary coil with a single secondary coil loaded with a defined load impedance
     Args
-        coil_config: dictionary of coil dimensions, materials, and other parameters
         f: frequency of the problem [Hz]
         hide_window: if True, femm will be run in the background
-    Returns
-        None
     """
-
     femm.openfemm(hide_window)
     femm.newdocument(0)  # 0 for magentics
     femm.mi_probdef(f, "meters", "axi", 1e-8, 0, 30)
@@ -33,6 +29,31 @@ def init_magnetic_problem(coil_config, f=0.0, hide_window=True):
 
     I_port = 1.0
     femm.mi_addcircprop("port1", I_port, 1)
+
+
+def init_injection_xfmr_magnetic_problem(xfmr_config, f=0.0, hide_window=True):
+    """initializes an ac magnetics problem in femm for testing a toroidal injection tranformer with a centeral axial single turn secondary
+    Args
+        xfmr_config: dictionary of transformer dimensions, materials, and other parameters
+        f: frequency of the problem [Hz]
+        hide_window: if True, femm will be run in the background
+    """
+    femm.openfemm(hide_window)
+    femm.newdocument(0)  # 0 for magentics
+    depth = xfmr_config["core"]["h"] * xfmr_config["core"]["N_cores"]
+    femm.mi_probdef(f, "meters", "planar", 1e-8, depth, 30)
+
+    # add materials
+    femm.mi_getmaterial("Air")
+    femm.mi_getmaterial("Copper")
+    # get soft ferrite material
+    femm.mi_getmaterial("Soft magnetic ferrite")  # Soft magnetic ferrite (Fe-Ni-Zn-V)
+
+    # make a new material with specific material properties (rho_e, mu_r, etc)
+
+    I_port = 1.0
+    femm.mi_addcircprop("Pri", I_port, 1)  # series
+    femm.mi_addcircprop("Sec", 0.0, 1)  # open circuit
 
 
 def arrange_windings_coil(coil_config):
@@ -57,93 +78,47 @@ def arrange_windings_coil(coil_config):
     return RZ_center
 
 
-# def make_rectangular_turn_magnetic(
-#     turn_center,
-#     coil_config,
-#     circuit_name="<None>",
-#     skin_depth=None,
-# ):
-#     """makes a single turn of a rectangular conductor for an magnetic simulation
-#     Args:
-#         turn_center: (r,z) coordinates of the center of the turn
-#         coil_config: dictionary of coil parameters
-#         circuit_name: name of the circuit for the conductor
-#         skin_depth: skin depth of the conductor material at the simulation frequency [m]
-#     """
-#     # TODO add functionality to ensure the mesh size is smaller than the skin depth at the surface of the conductor
-#     dr = coil_config["coil"]["tube_dr"]
-#     dz = coil_config["coil"]["tube_dz"]
-#     corner_radius = coil_config["coil"]["tube_radius"]
-
-#     # crossection mesh size
-#     min_dim = min(dr, dz)
-#     mesh_size_factor = coil_config["coil"].get(
-#         "mesh_size_factor", 10
-#     )  # default factor of 10
-#     mesh_size = min_dim / mesh_size_factor
-#     # skin mesh size
-#     skin_mesh_size = np.min([skin_depth / 2, mesh_size])
-#     arc_geometry_max_seg_deg = 10  # degrees
-
-#     # Validate corner radius
-#     max_corner_radius = min(dr, dz) / 2
-#     safe_corner_radius = min(corner_radius, max_corner_radius)
-#     mesh_max_seg_deg = (
-#         360 * skin_mesh_size / (2 * safe_corner_radius * np.pi)
-#         if safe_corner_radius > 0
-#         else 10
-#     )
-
-#     # order (ul, ur, lr, ll)
-#     conductor_corner_coords = [
-#         (turn_center[0] - dr / 2, turn_center[1] + dz / 2),
-#         (turn_center[0] + dr / 2, turn_center[1] + dz / 2),
-#         (turn_center[0] + dr / 2, turn_center[1] - dz / 2),
-#         (turn_center[0] - dr / 2, turn_center[1] - dz / 2),
-#     ]
-#     femm.mi_drawrectangle(*conductor_corner_coords[3], *conductor_corner_coords[1])
-#     # add radius to the corners of the core to improve meshing
-#     if safe_corner_radius > 0.1e-3:
-#         for corner_coord in conductor_corner_coords:
-#             femm.mi_createradius(*corner_coord, safe_corner_radius)
-
-#         ul_coord = (
-#             conductor_corner_coords[0][0] + safe_corner_radius,
-#             conductor_corner_coords[0][1] - safe_corner_radius,
-#         )
-#         ur_coord = (
-#             conductor_corner_coords[1][0] - safe_corner_radius,
-#             conductor_corner_coords[1][1] - safe_corner_radius,
-#         )
-#         lr_coord = (
-#             conductor_corner_coords[2][0] - safe_corner_radius,
-#             conductor_corner_coords[2][1] + safe_corner_radius,
-#         )
-#         ll_coord = (
-#             conductor_corner_coords[3][0] + safe_corner_radius,
-#             conductor_corner_coords[3][1] + safe_corner_radius,
-#         )
-#         femm.mi_selectarcsegment(*ul_coord)
-#         femm.mi_selectarcsegment(*ur_coord)
-#         femm.mi_selectarcsegment(*lr_coord)
-#         femm.mi_selectarcsegment(*ll_coord)
-#         femm.mi_setarcsegmentprop(mesh_max_seg_deg, "<None>", 0, 0)
-#         femm.mi_clearselected()
-#         # asign conductor faces to boundary condition
-#         femm.mi_selectsegment(turn_center[0], turn_center[1] + dz / 2)
-#         femm.mi_selectsegment(turn_center[0], turn_center[1] - dz / 2)
-#         femm.mi_selectsegment(turn_center[0] - dr / 2, turn_center[1])
-#         femm.mi_selectsegment(turn_center[0] + dr / 2, turn_center[1])
-#         femm.mi_setsegmentprop("<None>", skin_mesh_size, 0, 0, 0)
-#         femm.mi_clearselected()
-
-#     femm.mi_addblocklabel(*turn_center)
-#     femm.mi_selectlabel(*turn_center)
-#     femm.mi_setblockprop("Copper", 0, mesh_size, circuit_name, 0, 0, 1)
-#     femm.mi_clearselected()
+def arrange_windings_toroid(xfmr_config):
+    """does all the math for determining the location of each turn based on the
+    winding configs for a toroidal transformer
+    Args:
+        xfmr_config: dictionary of transformer dimensions, materials, and other parameters
+    Returns
+        pri_rz: (r,z) coordinates of the center of the primary turns
+        sec_rz: (r,z) coordinates of the center of the secondary turn
+    """
+    sec_rz = (0, 0)
+    core_ri = xfmr_config["core"]["ri"]
+    core_ro = xfmr_config["core"]["ro"]
+    bobbin_dr = xfmr_config["primary"]["bobbin_dr"]
+    wire_d = xfmr_config["primary"]["wire_d"]
+    Np = xfmr_config["primary"]["N"]
+    winding_r_inner = core_ri - bobbin_dr - wire_d / 2
+    winding_r_outer = core_ro + bobbin_dr + wire_d / 2
+    # windings are evenly spaced in angle
+    theta_arr = np.linspace(0, 2 * np.pi, Np, endpoint=False)
+    # make arrays of inner and outer primary rz coords
+    # TODO
+    return None
 
 
-def make_hollow_rectangular_turn_magnetic(
+# core:
+#   ri: 27.0e-3  # inner radius
+#   ro: 42.0e-3  # outer radius
+#   h: 12.7e-3  # core height
+#   Al: 2726e-9  # [H/T^2]  # inductance factor
+#   N_cores: 2  # number of cores stacked in axial direction
+# secondary:
+#   tube_d: 12.7e-3  # copper tube OD
+#   tube_t: 0.7e-3  # copper tube thickness
+# primary:
+#   bobbin_dr: 1.0e-3  # radial thickness of the bobbin
+#   wire_d: 3.0e-3  # diameter of the wire
+#   litz_strands: 100  # number of strands in litz wire per conductor
+#   N: 10  # number of turns
+
+
+def make_hollow_rectangular_turn(
     turn_center,
     coil_config,
     circuit_name="<None>",
@@ -316,14 +291,13 @@ def make_coil_windings_magnetic(coil_config, turn_rz, skin_depth=1.0):
     # make each conductor crossection
     for turn_idx, rz in enumerate(turn_rz):
         # circular crossection
-        make_hollow_rectangular_turn_magnetic(
+        make_hollow_rectangular_turn(
             rz,
             coil_config,
             circuit_name="port1",
             skin_depth=skin_depth,
         )
-    femm.mi_zoomnatural()
-    femm.mi_makeABC()
+    # femm.mi_zoomnatural()
 
 
 def make_crucible_magnetic(coil_config, include_crucible=False):
@@ -331,6 +305,7 @@ def make_crucible_magnetic(coil_config, include_crucible=False):
     Args
         coil_config: dictionary of coil parameters
     """
+    sim_r_max = coil_config["sim_r_max"]
     crucible_r_inner = coil_config["crucible"]["r_i"]
     crucible_r_outer = coil_config["crucible"]["r_o"]
     crucible_height = coil_config["crucible"]["h"]
@@ -351,10 +326,14 @@ def make_crucible_magnetic(coil_config, include_crucible=False):
         femm.mi_clearselected()
 
     # add air label 5mm above the crucible at r = crucible_r_inner/2
-    femm.mi_addblocklabel(crucible_r_inner / 2, crucible_height / 2 + 0.005)
-    femm.mi_selectlabel(crucible_r_inner / 2, crucible_height / 2 + 0.005)
+    air_label_rz = (sim_r_max, 0)
+    femm.mi_addblocklabel(*air_label_rz)
+    femm.mi_selectlabel(*air_label_rz)
     femm.mi_setblockprop("Air", 0, 0.01, "<None>", 0, 0, 1)
     femm.mi_clearselected()
+
+    femm.mi_zoomnatural()
+    femm.mi_makeABC()
 
 
 def coil_impedance_sim(coil_config, f_arr, hide_window=False):
@@ -372,7 +351,7 @@ def coil_impedance_sim(coil_config, f_arr, hide_window=False):
 
     # simulate the impedance at each frequency
     for f_idx, f in enumerate(f_arr):
-        init_magnetic_problem(coil_config, f=f, hide_window=hide_window)
+        init_coil_magnetic_problem(f=f, hide_window=hide_window)
 
         # get turn positions using available function
         turn_rz = arrange_windings_coil(coil_config)
@@ -393,7 +372,7 @@ def coil_impedance_sim(coil_config, f_arr, hide_window=False):
         make_crucible_magnetic(coil_config, include_crucible=False)
 
         # save temporary file
-        temp_filename = f"coil_sim_{f_idx}.fem"
+        temp_filename = f"coil_sim.fem"
         femm.mi_saveas(temp_filename)
 
         start_time = time.time()

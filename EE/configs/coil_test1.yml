@@ -11,3 +11,4 @@ crucible:
   r_i: 24.0e-3
   rho_e: 5.0e-6  #  [Ohm*m]
   h: 150.0e-3
+sim_r_max: 200.0e-3  # maximum radial extent of the simulation

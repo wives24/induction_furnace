@@ -7,6 +7,10 @@
 	- KEMET R76 (342ARMS cts, 250V AC)
 	- high performance [C500T](https://celem.com/product/c500t/)
 
+
+## Injection Transformer
+Size: 35mm ID a good minimum leaving enough room for HV isolation, although more may  be nice to reduce parasitic cap even more
+
 Toroids
 - https://www.digikey.com/en/products/detail/magnetics-a-division-of-spang-co/0077339A7/18626941
 - TDK [PC95T96x20x70](https://product.tdk.com/en/search/ferrite/ferrite/ferrite-core/info?part_no=PC95T96x20x70)
@@ -21,6 +25,9 @@ Film Resonant Caps
 - [digikey](https://www.digikey.com/en/products/detail/kemet/R76PR3220SE30J/18306360)
 	- [datasheet](https://content.kemet.com/datasheets/KEM_F3034_R76.pdf) has all deratings
 - 
+
+Be careful of AC voltage derating
+![[Pasted image 20251202195206.png]]
 
 
 I think I want a high permeability core (with no gap), because I don't necessarily want any energy storage in the transformer, but rather just a impedance transform between the higher voltage, lower current primary

@@ -1,0 +1,16 @@
+Vin: 48.0
+I_in_max: 100.0
+F_res_des: 50.0e3  # desired switching frequency
+Cr:
+  Cr_nom: 47e-9
+  Cr_ESL: 16.0e-9  # equivalent series inductance
+  Cr_ESR: 14.0e-3  # equivalent series resistance
+  N_Cr_par: 100   
+  N_Cr_ser: 2
+XFMR:
+  Al: 2726e-9  # [H/T^2]  # inductance factor
+  N_cores: 2  # number of cores stacked in axial direction
+  N_pri: 10  # number of primary turns
+  N_sec: 1  # number of secondary turns
+  ESR_pri: 10.0e-3  # primary winding resistance
+  ESR_sec: 1.0e-3  # secondary winding resistance

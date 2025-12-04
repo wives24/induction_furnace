@@ -4,6 +4,8 @@ core:
   h: 12.7e-3  # core height
   Al: 2726e-9  # [H/T^2]  # inductance factor
   N_cores: 2  # number of cores stacked in axial direction
+  mu_r: 1000.0  # relative permeability
+  rho_e: 1.68e-7  # [ohm.m] resistivity
 secondary:
   tube_d: 12.7e-3  # copper tube OD
   tube_t: 0.7e-3  # copper tube thickness
@@ -11,4 +13,4 @@ primary:
   bobbin_dr: 1.0e-3  # radial thickness of the bobbin
   wire_d: 3.0e-3  # diameter of the wire
   litz_strands: 100  # number of strands in litz wire per conductor
-  N: 10  # number of turns
+  N: 16  # number of turns

@@ -47,16 +47,20 @@ def init_injection_xfmr_magnetic_problem(xfmr_config, f=0.0, hide_window=True):
     femm.mi_getmaterial("Air")
     femm.mi_getmaterial("Copper")
     # get soft ferrite material
-    femm.mi_getmaterial("Soft magnetic ferrite")  # Soft magnetic ferrite (Fe-Ni-Zn-V)
+    femm.mi_getmaterial(
+        "Soft magnetic ferrite (Fe-Ni-Zn-V)"
+    )  # Soft magnetic ferrite (Fe-Ni-Zn-V)
 
     # make a new material with specific material properties (rho_e, mu_r, etc)
 
-    I_port = 1.0
-    femm.mi_addcircprop("Pri", I_port, 1)  # series
-    femm.mi_addcircprop("Sec", 0.0, 1)  # open circuit
+    I_pri = 0.0
+    I_sec = 1.0
+    femm.mi_addcircprop("Pri_outer", I_pri, 1)
+    femm.mi_addcircprop("Pri_inner", -I_pri, 1)
+    femm.mi_addcircprop("Sec", I_sec, 1)
 
 
-def arrange_windings_coil(coil_config):
+def _arrange_windings_coil(coil_config):
     """does all the math for determining the location of each turn based on the
     winding configs
     Args:
@@ -78,13 +82,14 @@ def arrange_windings_coil(coil_config):
     return RZ_center
 
 
-def arrange_windings_toroid(xfmr_config):
+def _arrange_windings_toroid(xfmr_config):
     """does all the math for determining the location of each turn based on the
     winding configs for a toroidal transformer
     Args:
         xfmr_config: dictionary of transformer dimensions, materials, and other parameters
     Returns
-        pri_rz: (r,z) coordinates of the center of the primary turns
+        pri_rz_inner: (r,z) coordinates of the center of the primary turns
+        pri_rz_outer: (r,z) coordinates of the center of the primary turns
         sec_rz: (r,z) coordinates of the center of the secondary turn
     """
     sec_rz = (0, 0)
@@ -98,8 +103,16 @@ def arrange_windings_toroid(xfmr_config):
     # windings are evenly spaced in angle
     theta_arr = np.linspace(0, 2 * np.pi, Np, endpoint=False)
     # make arrays of inner and outer primary rz coords
-    # TODO
-    return None
+    pri_rz_inner = np.stack(
+        (winding_r_inner * np.cos(theta_arr), winding_r_inner * np.sin(theta_arr)),
+        axis=-1,
+    )  # [Np x 2]
+    pri_rz_outer = np.stack(
+        (winding_r_outer * np.cos(theta_arr), winding_r_outer * np.sin(theta_arr)),
+        axis=-1,
+    )  # [Np x 2]
+
+    return pri_rz_inner, pri_rz_outer, sec_rz
 
 
 # core:
@@ -118,7 +131,7 @@ def arrange_windings_toroid(xfmr_config):
 #   N: 10  # number of turns
 
 
-def make_hollow_rectangular_turn(
+def _make_hollow_rectangular_turn(
     turn_center,
     coil_config,
     circuit_name="<None>",
@@ -281,6 +294,143 @@ def make_hollow_rectangular_turn(
     femm.mi_clearselected()
 
 
+def _make_hollow_circular_turn(
+    turn_center,
+    xfmr_config,
+    circuit_name="<None>",
+    skin_depth=None,
+):
+    """makes a single turn of a hollow circular conductor for magnetic simulation
+    Args:
+        turn_center: (r,z) coordinates of the center of the turn
+        xfmr_config: dictionary of transformer parameters
+        circuit_name: name of the circuit for the conductor
+        skin_depth: skin depth of the conductor material at the simulation frequency [m]
+    """
+    tube_d = xfmr_config["secondary"]["tube_d"]
+    tube_t = xfmr_config["secondary"]["tube_t"]  # shell thickness
+
+    # Calculate radii
+    outer_radius = tube_d / 2
+    inner_radius = outer_radius - tube_t
+
+    # Mesh size calculations
+    mesh_size_factor = xfmr_config.get("mesh_size_factor", 10)  # default factor of 10
+    mesh_size = tube_t / mesh_size_factor  # base mesh size on wall thickness
+
+    # Skin mesh size
+    if skin_depth is not None:
+        skin_mesh_size = min(skin_depth / 2, mesh_size)
+    else:
+        skin_mesh_size = mesh_size
+
+    # Create outer circle using 2 semicircular arcs
+    # Outer circle points
+    outer_left = (turn_center[0] - outer_radius, turn_center[1])
+    outer_right = (turn_center[0] + outer_radius, turn_center[1])
+
+    # Draw outer circle as 2 semicircular arcs
+    femm.mi_drawarc(*outer_left, *outer_right, 180, 1)  # top semicircle
+    femm.mi_drawarc(*outer_right, *outer_left, 180, 1)  # bottom semicircle
+
+    # Create inner circle (hole) - only if inner radius is meaningful
+    if (
+        inner_radius > 0.1e-3
+    ):  # Only create hole if wall thickness leaves meaningful inner diameter
+        # Inner circle points
+        inner_left = (turn_center[0] - inner_radius, turn_center[1])
+        inner_right = (turn_center[0] + inner_radius, turn_center[1])
+
+        # Draw inner circle as 2 semicircular arcs
+        femm.mi_drawarc(*inner_left, *inner_right, 180, 1)  # top semicircle
+        femm.mi_drawarc(*inner_right, *inner_left, 180, 1)  # bottom semicircle
+
+    # Add copper label in the conductor region (between outer and inner circles)
+    # Place label at a point that's definitely in the copper region
+    copper_label_radius = outer_radius - tube_t / 2
+    copper_label_pos = (turn_center[0] + copper_label_radius, turn_center[1])
+    femm.mi_addblocklabel(*copper_label_pos)
+    femm.mi_selectlabel(*copper_label_pos)
+    femm.mi_setblockprop("Copper", 0, mesh_size, circuit_name, 0, 0, 1)
+    femm.mi_clearselected()
+
+    # Add air label in the center (hollow part) - only if there's a meaningful hole
+    if inner_radius > 0.1e-3:
+        air_label_pos = turn_center
+        femm.mi_addblocklabel(*air_label_pos)
+        femm.mi_selectlabel(*air_label_pos)
+        femm.mi_setblockprop("Air", 0, mesh_size, "<None>", 0, 0, 1)
+        femm.mi_clearselected()
+
+    # Set mesh properties for arc segments
+    max_seg_deg = 10  # degrees - controls mesh density around the circles
+
+    # Select outer circle arc segments (top and bottom semicircles)
+    femm.mi_selectarcsegment(
+        turn_center[0], turn_center[1] + outer_radius
+    )  # top semicircle
+    femm.mi_selectarcsegment(
+        turn_center[0], turn_center[1] - outer_radius
+    )  # bottom semicircle
+
+    # Select inner circle arc segments if they exist
+    if inner_radius > 0.1e-3:
+        femm.mi_selectarcsegment(
+            turn_center[0], turn_center[1] + inner_radius
+        )  # top semicircle
+        femm.mi_selectarcsegment(
+            turn_center[0], turn_center[1] - inner_radius
+        )  # bottom semicircle
+
+    # Apply mesh properties to all selected arc segments
+    femm.mi_setarcsegmentprop(max_seg_deg, "<None>", 0, 0)
+    femm.mi_clearselected()
+
+
+def _make_circular_turn_magnetic(
+    turn_center,
+    xfmr_config,
+    circuit_name="<None>",
+    skin_depth=1.0,
+):
+    """makes a single turn of a circular conductor for an magnetic simulation
+    Args:
+        turn_center: (r,z) coordinates of the center of the turn
+        xfmr_config: dictionary of transformer parameters
+        circuit_name: name of the circuit for the conductor
+        skin_depth: skin depth of the conductor material at the simulation frequency [m]
+    """
+    d_wire = xfmr_config["primary"]["wire_d"]
+    # crossection mesh size
+    mesh_size = d_wire / 10
+    # skin mesh size
+    skin_mesh_size = np.min([skin_depth / 2, mesh_size])
+    arc_geometry_max_seg_deg = 10  # degrees
+    mesh_max_seg_deg = 360 * skin_mesh_size / (d_wire * np.pi)
+    # define conductor geometry
+    left_coord = (turn_center[0] - d_wire / 2, turn_center[1])
+    right_coord = (turn_center[0] + d_wire / 2, turn_center[1])
+    femm.mi_addnode(*left_coord)
+    femm.mi_addnode(*right_coord)
+    femm.mi_addarc(
+        *left_coord, *right_coord, 180, int(180 / arc_geometry_max_seg_deg + 1)
+    )
+    femm.mi_addarc(
+        *right_coord, *left_coord, 180, int(180 / arc_geometry_max_seg_deg + 1)
+    )
+
+    # define the mesh size on the surface of the conductor
+    femm.mi_selectarcsegment(turn_center[0], turn_center[1] + d_wire / 2)
+    femm.mi_selectarcsegment(turn_center[0], turn_center[1] - d_wire / 2)
+    femm.mi_setarcsegmentprop(mesh_max_seg_deg, "<None>", 0, 0)
+    femm.mi_clearselected()
+
+    femm.mi_addblocklabel(*turn_center)
+    femm.mi_selectlabel(*turn_center)
+    femm.mi_setblockprop("Copper", 0, mesh_size, circuit_name, 0, 0, 1)
+    femm.mi_clearselected()
+
+
 def make_coil_windings_magnetic(coil_config, turn_rz, skin_depth=1.0):
     """makes the geometry for the inductor winding within the core winding area for a
     magnetic simulation
@@ -291,13 +441,40 @@ def make_coil_windings_magnetic(coil_config, turn_rz, skin_depth=1.0):
     # make each conductor crossection
     for turn_idx, rz in enumerate(turn_rz):
         # circular crossection
-        make_hollow_rectangular_turn(
+        _make_hollow_rectangular_turn(
             rz,
             coil_config,
             circuit_name="port1",
             skin_depth=skin_depth,
         )
     # femm.mi_zoomnatural()
+
+
+def make_toroidal_windings_magnetic(
+    xfmr_config, pri_rz_inner, pri_rz_outer, sec_rz, skin_depth=1.0
+):
+    # add a central hollow circular secondary turn
+    _make_hollow_circular_turn(
+        sec_rz,
+        xfmr_config,
+        circuit_name="Sec",
+        skin_depth=skin_depth,
+    )
+
+    # make each primary conductor crossection
+    for turn_idx in range(pri_rz_outer.shape[0]):
+        _make_circular_turn_magnetic(
+            pri_rz_outer[turn_idx],
+            xfmr_config,
+            circuit_name="Pri_outer",
+            skin_depth=skin_depth,
+        )
+        _make_circular_turn_magnetic(
+            pri_rz_inner[turn_idx],
+            xfmr_config,
+            circuit_name="Pri_inner",
+            skin_depth=skin_depth,
+        )
 
 
 def make_crucible_magnetic(coil_config, include_crucible=False):
@@ -336,6 +513,54 @@ def make_crucible_magnetic(coil_config, include_crucible=False):
     femm.mi_makeABC()
 
 
+def make_toroidal_xfmr_core_magnetic(xfmr_config):
+    """makes the core geometry for a toroidal injection transformer magnetic simulation
+    Args
+        xfmr_config: dictionary of transformer parameters
+    """
+    core_ri = xfmr_config["core"]["ri"]
+    core_ro = xfmr_config["core"]["ro"]
+    core_h = xfmr_config["core"]["h"]
+
+    # Draw inner circle (hole) using 2 semicircular arcs
+    inner_left = (-core_ri, 0)
+    inner_right = (core_ri, 0)
+    femm.mi_drawarc(*inner_left, *inner_right, 180, 1)  # top semicircle
+    femm.mi_drawarc(*inner_right, *inner_left, 180, 1)  # bottom semicircle
+
+    # Draw outer circle using 2 semicircular arcs
+    outer_left = (-core_ro, 0)
+    outer_right = (core_ro, 0)
+    femm.mi_drawarc(*outer_left, *outer_right, 180, 1)  # top semicircle
+    femm.mi_drawarc(*outer_right, *outer_left, 180, 1)  # bottom semicircle
+
+    # Add core label
+    core_label_coord = ((core_ri + core_ro) / 2, 0)
+    femm.mi_addblocklabel(*core_label_coord)
+    femm.mi_selectlabel(*core_label_coord)
+    femm.mi_setblockprop(
+        "Soft magnetic ferrite (Fe-Ni-Zn-V)", 0, 0.01, "<None>", 0, 0, 1
+    )
+    femm.mi_clearselected()
+
+    # Make air labels as 2*ro in all directions
+    air_label_coords = [
+        (2 * core_ro, 0),
+        # (-2 * core_ro, 0),
+        # (0, 2 * core_ro),
+        # (0, -2 * core_ro),
+        (0, xfmr_config["secondary"]["tube_d"] * 1.1),
+    ]
+    for coord in air_label_coords:
+        femm.mi_addblocklabel(*coord)
+        femm.mi_selectlabel(*coord)
+        femm.mi_setblockprop("Air", 0, 0.01, "<None>", 0, 0, 1)
+        femm.mi_clearselected()
+
+    femm.mi_zoomnatural()
+    femm.mi_makeABC()
+
+
 def coil_impedance_sim(coil_config, f_arr, hide_window=False):
     """calculates the inductive impedance of a coil
     Args
@@ -354,7 +579,7 @@ def coil_impedance_sim(coil_config, f_arr, hide_window=False):
         init_coil_magnetic_problem(f=f, hide_window=hide_window)
 
         # get turn positions using available function
-        turn_rz = arrange_windings_coil(coil_config)
+        turn_rz = _arrange_windings_coil(coil_config)
 
         # calculate skin depth (simple approximation)
         # skin depth = sqrt(2*rho/(omega*mu)) where rho=1.7e-8 for copper, mu=4*pi*1e-7
@@ -404,5 +629,66 @@ def coil_impedance_sim(coil_config, f_arr, hide_window=False):
         # close solution and clean up
         femm.mo_close()
         femm.mi_close()
+
+    return Z_arr, sim_info_list
+
+
+def transformer_impedance_sim(xfmr_config, f_arr, hide_window=False):
+    """calculates the inductive impedance of a toroidal injection transformer
+    Args
+        xfmr_config: dictionary of transformer dimensions, materials, and other parameters
+        f_arr: frequency array of the problem [Hz]
+        hide_window: if True, femm will be run in the background
+    Returns
+        Z_arr: complex float array impedance of the transformer [Ohm]
+        sim_info_list: list of simulation information dictionaries
+    """
+    Z_arr = np.zeros(len(f_arr), dtype=complex)
+    sim_info_list = []  # list of simulation information dictionaries
+
+    # simulate the impedance at each frequency
+    for f_idx, f in enumerate(f_arr):
+        init_injection_xfmr_magnetic_problem(xfmr_config, f=f, hide_window=hide_window)
+
+        # get turn positions
+        pri_rz_inner, pri_rz_outer, sec_rz = _arrange_windings_toroid(xfmr_config)
+
+        # make transformer winding geometry
+        make_toroidal_windings_magnetic(
+            xfmr_config, pri_rz_inner, pri_rz_outer, sec_rz, skin_depth=1.0
+        )
+
+        # make core geometry
+        make_toroidal_xfmr_core_magnetic(xfmr_config)
+
+        # save temporary file
+        temp_filename = f"toroid_sim.fem"
+        femm.mi_saveas(temp_filename)
+
+        start_time = time.time()
+        femm.mi_analyze()
+        end_time = time.time()
+        sim_dur = np.around(end_time - start_time, 1)
+        femm.mi_loadsolution()
+        i, v, flux = femm.mo_getcircuitproperties("Sec")
+
+        # avoid division by zero
+        if abs(i) > 1e-12:
+            Z_arr[f_idx] = v / i
+        else:
+            Z_arr[f_idx] = complex(np.inf, 0)
+
+        # get the number of elements and nodes
+        num_nodes = femm.mo_numnodes()
+        num_elements = femm.mo_numelements()
+
+        sim_info_list.append(
+            {
+                "frequency": f,
+                "sim_dur": sim_dur,
+                "num_nodes": num_nodes,
+                "num_elements": num_elements,
+            }
+        )
 
     return Z_arr, sim_info_list

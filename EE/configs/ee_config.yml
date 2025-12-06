@@ -1,6 +1,7 @@
 Vin: 48.0
 I_in_max: 100.0
 F_res_des: 50.0e3  # desired switching frequency
+L_coil: 2.0e-6
 Cr:
   Cr_nom: 47e-9
   Cr_ESL: 16.0e-9  # equivalent series inductance

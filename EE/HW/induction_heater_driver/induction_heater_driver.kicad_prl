@@ -59,7 +59,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "cap_bank.kicad_prl",
+    "filename": "induction_heater_driver.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {

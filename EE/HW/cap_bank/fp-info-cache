@@ -1,4 +1,4 @@
-27098547356628431
+27100312410785697
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106543,6 +106543,13 @@ peml
 C_2220_5650Metric
 Capacitor SMD 2220 (5650 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/AVX-HV_MLCC.pdf), generated with kicad-footprint-generator
 capacitor
+0
+2
+2
+peml
+C_Rect_L26.5mm_W7.0mm_P22.50mm_R76
+C Rect series Radial pin pitch 22.50mm length 26.5mm width 7mm Capacitor
+C Rect series Radial pin pitch 22.50mm length 26.5mm width 7mm Capacitor
 0
 2
 2

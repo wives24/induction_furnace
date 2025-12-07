@@ -1,0 +1,56 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "4a4d350d-8886-4083-afc6-4b49fb4e1662")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 115.57 101.6)
+		(size 33.02 27.94)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "876ef4ab-98e7-4587-95f9-89debc1f72ad")
+		(property "Sheetname" "H_bridge"
+			(at 115.57 100.8884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "H_bridge.kicad_sch"
+			(at 115.57 130.1246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "induction_heater_driver"
+				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

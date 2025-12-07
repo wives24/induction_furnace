@@ -6,6 +6,10 @@
 	- careful of AC voltage rating at resonant frequency
 	- KEMET R76 (342ARMS cts, 250V AC)
 	- high performance [C500T](https://celem.com/product/c500t/)
+- [3kW blog](http://inductionheatertutorial.com/)
+- [12kW blog](https://www.instructables.com/12KW-Induction-Heater/)
+	- uses Magnetic Inc ZP48613TC toroid (same one I picked independently)
+	- resonant cap voltage is measured for PLL feedback
 
 
 ## Injection Transformer

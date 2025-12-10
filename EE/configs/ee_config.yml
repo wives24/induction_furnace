@@ -2,16 +2,19 @@ Vin: 48.0
 I_in_max: 100.0
 F_res_des: 50.0e3  # desired switching frequency
 L_coil: 2.0e-6
-Cr:
-  Cr_nom: 47e-9
-  Cr_ESL: 16.0e-9  # equivalent series inductance
-  Cr_ESR: 14.0e-3  # equivalent series resistance
-  N_Cr_par: 100   
-  N_Cr_ser: 2
+Cr: 2.2e-6
+Cr_ESR: 0.5e-3  # ESR of resonant capacitor bank
+R_load: 20.0e-3  # load resistance
+
 XFMR:
-  Al: 2726e-9  # [H/T^2]  # inductance factor
+  Al: 2700.0e-9  # [H/T^2]  # inductance factor
   N_cores: 2  # number of cores stacked in axial direction
   N_pri: 10  # number of primary turns
   N_sec: 1  # number of secondary turns
   ESR_pri: 10.0e-3  # primary winding resistance
   ESR_sec: 1.0e-3  # secondary winding resistance
+
+H-bridge:
+  Rds_on: 10.0e-3  # [Ohm] MOSFET on resistance
+  dead_time: 50.0e-9  # [s] MOSFET dead time
+  V_drive: 12.0  # [V] gate drive voltage

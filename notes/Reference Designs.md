@@ -24,6 +24,10 @@ Ferrite
 - ZP48613TC  [digikey](https://www.digikey.com/en/products/detail/magnetics-a-division-of-spang-co/ZP48613TC/18626685) (53mm ID in stock)
 - ZP47313TC [digikey](https://www.digikey.com/en/products/detail/magnetics-a-division-of-spang-co/ZP47313TC/18626814) (37mm ID)
 
+Magnetics
+- core material fits: https://www.mag-inc.com/Media/Magnetics/File-Library/Product%20Literature/Ferrite%20Literature/FC-S7.pdf?ext=.pdf
+- 
+
 
 Film Resonant Caps
 - [digikey](https://www.digikey.com/en/products/detail/kemet/R76PR3220SE30J/18306360)

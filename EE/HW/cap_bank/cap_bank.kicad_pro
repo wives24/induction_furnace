@@ -447,7 +447,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "peml"
+    ],
     "pinned_symbol_libs": [
       "peml",
       "peml_passives"
@@ -493,7 +495,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "V0/cap_bank.step",
       "svg": "",
       "vrml": ""
     },

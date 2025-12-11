@@ -223,7 +223,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "peml:CG32.5L"
+		(symbol "peml:B88069X5690T502"
 			(pin_numbers
 				(hide yes)
 			)
@@ -231,22 +231,22 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "GD"
-				(at 5.08 0 90)
+				(at 5.08 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "CG32.5L"
-				(at 7.62 0 90)
+			(property "Value" "B88069X5690T502"
+				(at 10.16 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "peml:B88069X5690T502"
 				(at 0 0 90)
 				(effects
 					(font
@@ -255,7 +255,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.littelfuse.com/assetdocs/gas-discharge-tubes-ac-and-cg3-datasheet?assetguid=314d8414-d377-4110-aff1-0dd41ae6c563"
+			(property "Datasheet" "https://www.tdk-electronics.tdk.com/inf/100/ds/EF2500X-X5690xxxx.pdf"
 				(at 0 0 90)
 				(effects
 					(font
@@ -264,7 +264,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Gas Discharge Tube 2500 V 5000A (5kA) 2 Pole Through Hole"
+			(property "Description" "Gas Discharge Tube 2500 V 2500A (2.5kA) ±20% 2 Pole Through Hole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -273,7 +273,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "Gas Discharge Tube 2500 V 5000A (5kA) 2 Pole Through Hole"
+			(property "ki_keywords" "Gas Discharge Tube 2500 V 2500A (2.5kA) ±20% 2 Pole Through Hole"
 				(at 0 0 0)
 				(effects
 					(font
@@ -282,7 +282,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "CG32.5L_0_1"
+			(symbol "B88069X5690T502_0_1"
 				(polyline
 					(pts
 						(xy 0 2.54) (xy 0 1.27)
@@ -411,7 +411,7 @@
 					)
 				)
 			)
-			(symbol "CG32.5L_1_1"
+			(symbol "B88069X5690T502_1_1"
 				(pin passive line
 					(at 0 5.08 270)
 					(length 2.54)
@@ -422,7 +422,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -446,6 +446,89 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "peml:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 			)
@@ -1036,10 +1119,10 @@
 			(embedded_fonts no)
 		)
 	)
-	(text_box "C_tot: 0.22uF, 4kV DC, 1400VRMS\nAt 50kHz, 64ARMS, 940VRMS\nbleed off tau: ~2.2s"
+	(text_box "C_tot: 0.264uF\nVmax DC: 4kV\nVmax AC: 1400 VRMS\nVmax AC (50kHz): 940 VRMS\nImax AC (50kHz): 76.8 ARMS\n\nbleed off tau: ~2.64s"
 		(exclude_from_sim no)
-		(at 66.04 59.69 0)
-		(size 22.86 12.7)
+		(at 106.68 53.34 0)
+		(size 35.56 17.78)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -1056,30 +1139,10 @@
 		)
 		(uuid "071d087e-bffb-4457-8c19-6e8054bc4746")
 	)
-	(text_box "TODO\n- make GDT footprint including 3d model\n- consider adding a method for current sensing (possibly with a CT)"
+	(text_box "GDT: B88069X5690T502\nDC breakdown: 2-3kV\nSurge beakdown (@100V/us==26.4A): 3.2kV\nSurge beakdown (@1kV/us==264A): 3.5kV\n\n"
 		(exclude_from_sim no)
-		(at 111.76 133.35 0)
-		(size 54.61 12.7)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "5d395d06-d489-49a4-b0f8-8af6a51795db")
-	)
-	(text_box "GDT \nmin breakdown is 2kV (50% of the DC cap voltage rating)"
-		(exclude_from_sim no)
-		(at 58.42 134.62 0)
-		(size 35.56 30.48)
+		(at 41.91 53.34 0)
+		(size 58.42 10.16)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -1107,6 +1170,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "04d0ca2c-8f58-438f-8e6e-8705ab93eacc")
+	)
+	(junction
+		(at 214.63 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06f1e9ed-1959-4ca4-abf1-d5a1ed148025")
 	)
 	(junction
 		(at 144.78 123.19)
@@ -1143,6 +1212,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "23d33288-dd3b-4e44-a8b2-dd1fba1e296f")
+	)
+	(junction
+		(at 213.36 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "275d2d47-00d6-425a-9151-9743deb04ec0")
 	)
 	(junction
 		(at 57.15 100.33)
@@ -1205,16 +1280,46 @@
 		(uuid "7dd9eda2-d18b-44a0-bb31-6592b3512250")
 	)
 	(junction
+		(at 203.2 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "81fd4e95-1285-4da3-988b-848122f9330e")
+	)
+	(junction
 		(at 111.76 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "83bf00d5-bc8c-4f24-8d77-cab7666c4e34")
 	)
 	(junction
+		(at 224.79 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c0aa35c-69a8-402f-a1fd-041f62a59f3c")
+	)
+	(junction
+		(at 226.06 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a0ac80be-74a9-4d93-8859-831aaf1e1661")
+	)
+	(junction
 		(at 190.5 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a2a160f6-8aea-47f5-b54f-46921b5634ba")
+	)
+	(junction
+		(at 213.36 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a4a27ebf-5723-4f76-8883-d7e4f171cc05")
+	)
+	(junction
+		(at 201.93 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aef36dd4-eb24-4cc1-bcf4-9f6cec026515")
 	)
 	(junction
 		(at 146.05 77.47)
@@ -1251,6 +1356,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c216026c-30ff-411f-9fa5-32079fb540ee")
+	)
+	(junction
+		(at 214.63 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c36ae927-804c-485b-a3d3-a120c0812f47")
 	)
 	(junction
 		(at 76.2 100.33)
@@ -1343,6 +1454,12 @@
 		(uuid "f2a6d15f-a8f8-48b9-b351-2cb515a69d3f")
 	)
 	(junction
+		(at 203.2 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f4dc9036-79c7-45cb-b621-2dc9815dfe8f")
+	)
+	(junction
 		(at 191.77 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1353,12 +1470,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f61720f4-7b31-46b7-aa90-d1026f701ece")
-	)
-	(junction
-		(at 203.2 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f9473e63-550c-4c89-b9fd-918f8bff29db")
 	)
 	(wire
 		(pts
@@ -1382,7 +1493,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 100.33) (xy 217.17 100.33)
+			(xy 226.06 100.33) (xy 240.03 100.33)
 		)
 		(stroke
 			(width 0)
@@ -1482,6 +1593,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 87.63) (xy 214.63 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23b0920b-6742-4859-8f11-2c1f351f0fe2")
+	)
+	(wire
+		(pts
 			(xy 179.07 100.33) (xy 179.07 102.87)
 		)
 		(stroke
@@ -1532,6 +1653,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 120.65) (xy 213.36 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a0a013f-d006-4642-b04d-74551771d66b")
+	)
+	(wire
+		(pts
 			(xy 146.05 77.47) (xy 157.48 77.47)
 		)
 		(stroke
@@ -1539,6 +1670,26 @@
 			(type default)
 		)
 		(uuid "2a5fdeb0-378a-4f65-b84a-75ced53414fe")
+	)
+	(wire
+		(pts
+			(xy 226.06 80.01) (xy 226.06 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d1ff732-9cc2-45a1-a090-4c0b7c85d987")
+	)
+	(wire
+		(pts
+			(xy 203.2 100.33) (xy 213.36 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "313fd1cb-c965-41cf-b6a3-cb190dfae2d6")
 	)
 	(wire
 		(pts
@@ -1589,6 +1740,16 @@
 			(type default)
 		)
 		(uuid "38c67899-1b53-468f-9a31-b67f365b1ebb")
+	)
+	(wire
+		(pts
+			(xy 213.36 110.49) (xy 213.36 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bb33042-6cf8-44f3-885c-d2dd67c39b78")
 	)
 	(wire
 		(pts
@@ -1672,6 +1833,26 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 100.33) (xy 226.06 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5328f23c-9cf0-4886-994c-50635dcec4aa")
+	)
+	(wire
+		(pts
+			(xy 226.06 97.79) (xy 226.06 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "582f98e2-a7d8-409c-9141-9bacc5247049")
+	)
+	(wire
+		(pts
 			(xy 167.64 100.33) (xy 168.91 100.33)
 		)
 		(stroke
@@ -1679,6 +1860,16 @@
 			(type default)
 		)
 		(uuid "58a6add3-f972-4ace-a0e5-1122e8e2f9d2")
+	)
+	(wire
+		(pts
+			(xy 214.63 100.33) (xy 224.79 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "595ee227-4eb4-49ce-81c0-4ecec386d6d4")
 	)
 	(wire
 		(pts
@@ -1772,6 +1963,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 120.65) (xy 224.79 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "695b6f07-fded-4654-9c76-bf14b7068f24")
+	)
+	(wire
+		(pts
 			(xy 146.05 100.33) (xy 156.21 100.33)
 		)
 		(stroke
@@ -1839,6 +2040,16 @@
 			(type default)
 		)
 		(uuid "744f2bbf-e259-4a5e-b098-847375c99106")
+	)
+	(wire
+		(pts
+			(xy 214.63 77.47) (xy 226.06 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75423fba-2d1c-4c33-b947-d881b94af191")
 	)
 	(wire
 		(pts
@@ -1922,6 +2133,16 @@
 	)
 	(wire
 		(pts
+			(xy 201.93 123.19) (xy 213.36 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "860f88c7-65d5-49e5-b209-05dfb8ca35ed")
+	)
+	(wire
+		(pts
 			(xy 146.05 97.79) (xy 146.05 100.33)
 		)
 		(stroke
@@ -1979,6 +2200,16 @@
 			(type default)
 		)
 		(uuid "922eb552-bc45-4983-acb3-0dd16353ce4d")
+	)
+	(wire
+		(pts
+			(xy 213.36 100.33) (xy 213.36 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93382efe-cd59-47b1-bc5e-a2ba95fff2d8")
 	)
 	(wire
 		(pts
@@ -2042,6 +2273,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 77.47) (xy 214.63 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a3dc70f-2f73-426a-b135-b7ff98063227")
+	)
+	(wire
+		(pts
 			(xy 191.77 77.47) (xy 191.77 80.01)
 		)
 		(stroke
@@ -2072,6 +2313,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 77.47) (xy 214.63 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3bd0294-c1ca-418c-8e1f-dcf24d8c4a3a")
+	)
+	(wire
+		(pts
 			(xy 57.15 123.19) (xy 57.15 100.33)
 		)
 		(stroke
@@ -2099,6 +2350,16 @@
 			(type default)
 		)
 		(uuid "ad9b7e83-4777-443a-bf0c-cdb7fb3054fb")
+	)
+	(wire
+		(pts
+			(xy 226.06 87.63) (xy 226.06 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae6889af-b1fa-496c-9a34-36a352fbd6e3")
 	)
 	(wire
 		(pts
@@ -2239,6 +2500,16 @@
 			(type default)
 		)
 		(uuid "cd30ff7f-e34c-4497-bf89-8ec662722539")
+	)
+	(wire
+		(pts
+			(xy 213.36 123.19) (xy 224.79 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd8ab673-637e-4c80-857f-e8ef921e3bcb")
 	)
 	(wire
 		(pts
@@ -2412,6 +2683,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 100.33) (xy 224.79 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e243e664-d4ac-4111-a2fc-4262bf2bc716")
+	)
+	(wire
+		(pts
 			(xy 83.82 90.17) (xy 83.82 100.33)
 		)
 		(stroke
@@ -2419,6 +2700,16 @@
 			(type default)
 		)
 		(uuid "e3b8288e-bd6d-47e0-8a18-5509993690d4")
+	)
+	(wire
+		(pts
+			(xy 224.79 110.49) (xy 224.79 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4b95ea2-edf4-4c60-b100-5a0b306527e5")
 	)
 	(wire
 		(pts
@@ -2462,6 +2753,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 97.79) (xy 214.63 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecfd1d16-6d8c-4205-bd8e-5cdf5640357f")
+	)
+	(wire
+		(pts
 			(xy 168.91 87.63) (xy 168.91 90.17)
 		)
 		(stroke
@@ -2479,6 +2780,16 @@
 			(type default)
 		)
 		(uuid "f20d8ed7-3364-430a-875f-ba750f4ad0d1")
+	)
+	(wire
+		(pts
+			(xy 213.36 100.33) (xy 214.63 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4da747c-8f49-4016-b49c-446a73c7a11d")
 	)
 	(wire
 		(pts
@@ -2541,7 +2852,7 @@
 		(uuid "18bcc410-98f3-42ed-80ba-c4a5f36b3c42")
 	)
 	(label "NEG"
-		(at 209.55 100.33 0)
+		(at 232.41 100.33 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2559,7 +2870,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00aa3fc3-ce5a-4bb1-a74b-e42494e2c868")
-		(property "Reference" "C31"
+		(property "Reference" "C30"
 			(at 159.004 103.124 0)
 			(effects
 				(font
@@ -2694,7 +3005,157 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C31")
+					(reference "C30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 224.79 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "025bd78e-e7d7-4a0e-ba93-b59510e03586")
+		(property "Reference" "C48"
+			(at 227.584 113.284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 227.584 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 225.7552 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 227.584 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 227.584 118.618 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 227.584 120.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 229.87 122.555 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 224.79 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c464229-0b4f-4187-b035-9a6bd7d99357")
+		)
+		(pin "2"
+			(uuid "fe35d090-105d-49b7-8de6-896957a5a831")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C48")
 					(unit 1)
 				)
 			)
@@ -2709,7 +3170,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "13ba0219-9fed-424a-b43d-817e59ca1f1d")
-		(property "Reference" "C5"
+		(property "Reference" "C3"
 			(at 125.984 80.264 0)
 			(effects
 				(font
@@ -2844,7 +3305,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C5")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -3010,7 +3471,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "153e54a3-7f8e-4d73-b319-d9f426a48269")
-		(property "Reference" "C37"
+		(property "Reference" "C33"
 			(at 193.294 103.124 0)
 			(effects
 				(font
@@ -3145,7 +3606,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C37")
+					(reference "C33")
 					(unit 1)
 				)
 			)
@@ -3160,7 +3621,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "192d6358-0fe7-4428-802b-3d340b4ceeb5")
-		(property "Reference" "C24"
+		(property "Reference" "C38"
 			(at 113.284 113.284 0)
 			(effects
 				(font
@@ -3295,7 +3756,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C24")
+					(reference "C38")
 					(unit 1)
 				)
 			)
@@ -3327,7 +3788,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_8.4mm_M8_Pad_Via"
+		(property "Footprint" "peml:Dual_M5_busbar_conn_24mm"
 			(at 52.07 100.33 0)
 			(effects
 				(font
@@ -3375,7 +3836,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23d3e40f-61fe-444d-b87f-be9867b16fbc")
-		(property "Reference" "C16"
+		(property "Reference" "C20"
 			(at 183.134 90.424 0)
 			(effects
 				(font
@@ -3510,23 +3971,23 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C16")
+					(reference "C20")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "peml:CG32.5L")
-		(at 83.82 85.09 0)
+		(lib_id "peml:MountingHole")
+		(at 242.57 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "267aa41c-a9e6-48c8-a434-bab844a091ce")
-		(property "Reference" "GD1"
-			(at 87.884 85.344 0)
+		(uuid "2670de60-e945-47d1-9c7f-de39c73694e0")
+		(property "Reference" "H6"
+			(at 245.745 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3534,17 +3995,18 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CG32.5L"
-			(at 86.868 87.884 0)
+		(property "Value" "MountingHole"
+			(at 245.11 157.4799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" ""
-			(at 83.82 85.09 90)
+		(property "Footprint" "peml:MountingHole_4mm"
+			(at 242.57 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3552,8 +4014,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.littelfuse.com/assetdocs/gas-discharge-tubes-ac-and-cg3-datasheet?assetguid=314d8414-d377-4110-aff1-0dd41ae6c563"
-			(at 83.82 85.09 90)
+		(property "Datasheet" "~"
+			(at 242.57 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3561,25 +4023,19 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Gas Discharge Tube 2500 V 5000A (5kA) 2 Pole Through Hole"
-			(at 83.82 85.09 0)
+		(property "Description" "Mounting Hole without connection"
+			(at 242.57 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "3"
-			(uuid "8c895ba1-27da-4128-a4c2-3f18f82d6524")
-		)
-		(pin "1"
-			(uuid "c4e6473d-d965-495e-bae8-24f011f8f979")
 		)
 		(instances
-			(project ""
+			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "GD1")
+					(reference "H6")
 					(unit 1)
 				)
 			)
@@ -3594,7 +4050,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "29971845-e477-4506-b611-ec4e185176a1")
-		(property "Reference" "C4"
+		(property "Reference" "C14"
 			(at 114.554 90.424 0)
 			(effects
 				(font
@@ -3729,7 +4185,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C4")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -3744,7 +4200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2b9bf763-312f-4fb4-94f4-5e65869e52f8")
-		(property "Reference" "C2"
+		(property "Reference" "C13"
 			(at 103.124 90.424 0)
 			(effects
 				(font
@@ -3879,7 +4335,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C2")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -3894,7 +4350,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2c111fdf-0e12-4791-ab96-99261ec8fdeb")
-		(property "Reference" "C38"
+		(property "Reference" "C45"
 			(at 193.294 113.284 0)
 			(effects
 				(font
@@ -4029,7 +4485,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C38")
+					(reference "C45")
 					(unit 1)
 				)
 			)
@@ -4044,7 +4500,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2eb8e93e-7dc6-447c-b526-9c2d1041e42a")
-		(property "Reference" "C17"
+		(property "Reference" "C9"
 			(at 194.564 80.264 0)
 			(effects
 				(font
@@ -4179,7 +4635,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C17")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -4194,7 +4650,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f964b57-0811-4470-94f2-f17e6e7e71bb")
-		(property "Reference" "C27"
+		(property "Reference" "C28"
 			(at 136.144 103.124 0)
 			(effects
 				(font
@@ -4329,7 +4785,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C27")
+					(reference "C28")
 					(unit 1)
 				)
 			)
@@ -4344,7 +4800,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30c1ac04-5219-4b46-a630-1c9467f9bf80")
-		(property "Reference" "C9"
+		(property "Reference" "C5"
 			(at 148.844 80.264 0)
 			(effects
 				(font
@@ -4479,7 +4935,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C9")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -4636,6 +5092,70 @@
 		)
 	)
 	(symbol
+		(lib_id "peml:MountingHole")
+		(at 242.57 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "3fb589ab-0d20-4a7d-b6c8-02f884ae020a")
+		(property "Reference" "H4"
+			(at 245.745 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 245.11 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "peml:MountingHole_4mm"
+			(at 242.57 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 242.57 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "peml_passives:R76UN22204040J")
 		(at 180.34 83.82 0)
 		(unit 1)
@@ -4644,7 +5164,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4100d2e3-559b-487f-83db-72ed7a9703ee")
-		(property "Reference" "C15"
+		(property "Reference" "C8"
 			(at 183.134 80.264 0)
 			(effects
 				(font
@@ -4779,7 +5299,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C15")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -4794,7 +5314,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "41c87f00-ef07-4207-bf00-3ea7b6d6177e")
-		(property "Reference" "C25"
+		(property "Reference" "C27"
 			(at 124.714 103.124 0)
 			(effects
 				(font
@@ -4929,7 +5449,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C25")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -4944,7 +5464,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "43cd2f75-5f5d-40a6-9614-cd9458a7fde7")
-		(property "Reference" "D1"
+		(property "Reference" "D2"
 			(at 78.74 93.218 90)
 			(effects
 				(font
@@ -5052,7 +5572,7 @@
 		(instances
 			(project ""
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "D1")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -5067,7 +5587,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "451ac057-6c87-46cb-ae3c-4b250e8e4772")
-		(property "Reference" "C12"
+		(property "Reference" "C18"
 			(at 160.274 90.424 0)
 			(effects
 				(font
@@ -5202,7 +5722,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C12")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -5217,7 +5737,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4b65d969-c0e9-4a52-87b4-3020cb3b5310")
-		(property "Reference" "C19"
+		(property "Reference" "C10"
 			(at 205.994 80.264 0)
 			(effects
 				(font
@@ -5352,7 +5872,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C19")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -5367,7 +5887,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "50e49fb2-eabe-4980-a270-bdfa31d1259f")
-		(property "Reference" "C3"
+		(property "Reference" "C2"
 			(at 114.554 80.264 0)
 			(effects
 				(font
@@ -5502,72 +6022,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "peml:MountingHole_Pad")
-		(at 219.71 100.33 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "551800c7-74f8-47d7-8f0b-e6311509c45f")
-		(property "Reference" "H2"
-			(at 220.98 97.282 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MountingHole_Pad"
-			(at 220.98 104.14 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_8.4mm_M8_Pad_Via"
-			(at 219.71 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 219.71 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 219.71 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0ce67406-0ef0-4668-ac64-7be6f6299807")
-		)
-		(instances
-			(project "cap_bank"
-				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "H2")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -5582,7 +6037,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "57a2a3a3-1114-45bf-8e61-1b417eddf63b")
-		(property "Reference" "C18"
+		(property "Reference" "C21"
 			(at 194.564 90.424 0)
 			(effects
 				(font
@@ -5717,7 +6172,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C18")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -5732,7 +6187,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67aa1c2d-2005-42f4-ad71-57869e8da9cc")
-		(property "Reference" "C22"
+		(property "Reference" "C37"
 			(at 101.854 113.284 0)
 			(effects
 				(font
@@ -5867,7 +6322,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C22")
+					(reference "C37")
 					(unit 1)
 				)
 			)
@@ -5882,7 +6337,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c41da32-2b32-41a4-aa58-f34d0c0141c7")
-		(property "Reference" "D2"
+		(property "Reference" "D1"
 			(at 64.008 93.726 90)
 			(effects
 				(font
@@ -5990,7 +6445,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "D2")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -6005,7 +6460,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "74c7b7e2-a3b3-4161-b3a9-9ecc8a35b044")
-		(property "Reference" "C36"
+		(property "Reference" "C44"
 			(at 181.864 113.284 0)
 			(effects
 				(font
@@ -6140,7 +6595,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C36")
+					(reference "C44")
 					(unit 1)
 				)
 			)
@@ -6155,7 +6610,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d7902c9-ce23-459a-9280-b3db315d32b7")
-		(property "Reference" "C32"
+		(property "Reference" "C42"
 			(at 159.004 113.284 0)
 			(effects
 				(font
@@ -6290,7 +6745,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C32")
+					(reference "C42")
 					(unit 1)
 				)
 			)
@@ -6305,7 +6760,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "819b731d-1e20-493b-b2ad-4c033b17760d")
-		(property "Reference" "C26"
+		(property "Reference" "C39"
 			(at 124.714 113.284 0)
 			(effects
 				(font
@@ -6440,7 +6895,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C26")
+					(reference "C39")
 					(unit 1)
 				)
 			)
@@ -6455,7 +6910,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8888ad70-f6db-49c1-9137-71006a8e71a6")
-		(property "Reference" "C13"
+		(property "Reference" "C7"
 			(at 171.704 80.264 0)
 			(effects
 				(font
@@ -6590,7 +7045,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C13")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -6755,7 +7210,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f01852f-765e-4b99-89e7-579e8eaaa1bb")
-		(property "Reference" "C20"
+		(property "Reference" "C22"
 			(at 205.994 90.424 0)
 			(effects
 				(font
@@ -6890,7 +7345,76 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C20")
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml:B88069X5690T502")
+		(at 83.82 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a0b5024d-4ff2-4f78-a440-2ac658f23cfb")
+		(property "Reference" "GD1"
+			(at 88.265 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "B88069X5690T502"
+			(at 78.74 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:B88069X5690T502"
+			(at 83.82 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.tdk-electronics.tdk.com/inf/100/ds/EF2500X-X5690xxxx.pdf"
+			(at 83.82 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Gas Discharge Tube 2500 V 2500A (2.5kA) ±20% 2 Pole Through Hole"
+			(at 83.82 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "65382686-0f34-4b94-8eba-96048e0a5c3d")
+		)
+		(pin "1"
+			(uuid "2e0c5d1e-fc05-48ca-af24-54a85a8ab95b")
+		)
+		(instances
+			(project ""
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "GD1")
 					(unit 1)
 				)
 			)
@@ -6905,7 +7429,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ac5a8a25-dc1b-41ac-9bbd-0c6c277612cd")
-		(property "Reference" "C28"
+		(property "Reference" "C40"
 			(at 136.144 113.284 0)
 			(effects
 				(font
@@ -7040,7 +7564,71 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C28")
+					(reference "C40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml:MountingHole")
+		(at 242.57 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae276ee5-2da6-401b-8a72-f9c73bf41c2f")
+		(property "Reference" "H3"
+			(at 245.745 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 245.11 142.2399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "peml:MountingHole_4mm"
+			(at 242.57 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 242.57 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -7055,7 +7643,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2428566-04e3-422c-9737-d1a15f7c8cc6")
-		(property "Reference" "C34"
+		(property "Reference" "C43"
 			(at 170.434 113.284 0)
 			(effects
 				(font
@@ -7190,7 +7778,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C34")
+					(reference "C43")
 					(unit 1)
 				)
 			)
@@ -7205,7 +7793,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b69a3798-79d0-4f70-9a5b-4ba86fbd8807")
-		(property "Reference" "C14"
+		(property "Reference" "C19"
 			(at 171.704 90.424 0)
 			(effects
 				(font
@@ -7340,7 +7928,72 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C14")
+					(reference "C19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml:MountingHole_Pad")
+		(at 242.57 100.33 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "bbd57284-5ed2-46c6-8ff3-6909c2ae7462")
+		(property "Reference" "H2"
+			(at 243.84 97.155 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 243.84 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "peml:Dual_M5_busbar_conn_24mm"
+			(at 242.57 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 242.57 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b5f36e82-1b6a-4c98-84ab-1cb468819d50")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -7355,7 +8008,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3ae190a-8ab1-4090-8da9-c3eaff2e9dbd")
-		(property "Reference" "C8"
+		(property "Reference" "C16"
 			(at 137.414 90.424 0)
 			(effects
 				(font
@@ -7490,7 +8143,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C8")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -7505,7 +8158,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c5b0d92b-b431-40ee-acff-1d1fc3ea68c0")
-		(property "Reference" "C6"
+		(property "Reference" "C15"
 			(at 125.984 90.424 0)
 			(effects
 				(font
@@ -7640,7 +8293,157 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C6")
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 224.79 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c795d522-cfbd-401b-b2e2-1e96f4a703b3")
+		(property "Reference" "C36"
+			(at 227.584 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 227.584 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 225.7552 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 227.584 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 227.584 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 227.584 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 229.87 112.395 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 224.79 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "71689429-a5df-439e-89a0-f02d35a726f3")
+		)
+		(pin "2"
+			(uuid "cb255bc1-3919-4bd3-b8f1-26450f913b00")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C36")
 					(unit 1)
 				)
 			)
@@ -7655,7 +8458,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c9e3ca9d-f233-4e6c-b680-080f73a8592b")
-		(property "Reference" "C35"
+		(property "Reference" "C32"
 			(at 181.864 103.124 0)
 			(effects
 				(font
@@ -7790,7 +8593,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C35")
+					(reference "C32")
 					(unit 1)
 				)
 			)
@@ -7805,7 +8608,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cdb4754d-c755-4fdf-a2ec-705707b65ba1")
-		(property "Reference" "C23"
+		(property "Reference" "C26"
 			(at 113.284 103.124 0)
 			(effects
 				(font
@@ -7940,7 +8743,157 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C23")
+					(reference "C26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 226.06 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ceb9ca2a-812e-4f97-b200-081c33073ac4")
+		(property "Reference" "C12"
+			(at 228.854 80.264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 228.854 82.042 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 227.0252 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 228.854 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 228.854 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 228.854 87.376 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 231.14 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 226.06 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "86f52fa7-984b-4f28-aeff-70ddbc053e15")
+		)
+		(pin "2"
+			(uuid "82a83c26-406e-4f0f-a3fa-81e68df68279")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -7955,7 +8908,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d08a5c84-5eac-44ee-8db1-0ca10defc23c")
-		(property "Reference" "C21"
+		(property "Reference" "C25"
 			(at 101.854 103.124 0)
 			(effects
 				(font
@@ -8090,7 +9043,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C21")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -8105,7 +9058,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1059282-cc2e-4791-9801-2e1f7047da4c")
-		(property "Reference" "C11"
+		(property "Reference" "C6"
 			(at 160.274 80.264 0)
 			(effects
 				(font
@@ -8240,6 +9193,820 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 213.36 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4feb2c7-88e3-4349-938f-783a52cf8b97")
+		(property "Reference" "C35"
+			(at 216.154 103.124 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 216.154 104.902 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 214.3252 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 216.154 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 216.154 108.458 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 216.154 110.236 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 218.44 112.395 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 213.36 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4ebf5bc7-744b-4d94-84af-f985b3b4b1d9")
+		)
+		(pin "2"
+			(uuid "e7d0aef6-eca9-4858-b5b5-06113776858a")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml:MountingHole")
+		(at 242.57 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "d55b0fbe-e8d9-4204-b78e-93047425661c")
+		(property "Reference" "H5"
+			(at 245.745 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 245.11 152.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "peml:MountingHole_4mm"
+			(at 242.57 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 242.57 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 242.57 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "H5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 214.63 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dcaad3b7-2d63-4ac4-8532-33eda05d5300")
+		(property "Reference" "C23"
+			(at 217.424 90.424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 217.424 92.202 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 215.5952 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 217.424 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 217.424 95.758 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 217.424 97.536 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 219.71 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 214.63 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8750feab-b0af-4397-892b-8dabb81ff45b")
+		)
+		(pin "2"
+			(uuid "3f5dfc5d-3861-4f5e-b183-2dbba7dc0c87")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 213.36 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e2136ca9-70ca-408a-9582-a28badf744af")
+		(property "Reference" "C47"
+			(at 216.154 113.284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 216.154 115.062 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 214.3252 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 216.154 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 216.154 118.618 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 216.154 120.396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 218.44 122.555 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 213.36 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7265a8b6-e754-4041-8f14-41dbf6dfa3e8")
+		)
+		(pin "2"
+			(uuid "5b0a478d-26f0-4c82-b60b-711570927658")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 226.06 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e53709eb-0afa-41dc-bdfa-e97e72fa1cb6")
+		(property "Reference" "C24"
+			(at 228.854 90.424 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 228.854 92.202 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 227.0252 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 228.854 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 228.854 95.758 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 228.854 97.536 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 231.14 99.695 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 226.06 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd0be8b2-1553-4125-8019-0eecee32be66")
+		)
+		(pin "2"
+			(uuid "f1eea62c-bfb7-4425-8b5f-e42f572c3a8b")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
+					(reference "C24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "peml_passives:R76UN22204040J")
+		(at 214.63 83.82 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e71b8760-749e-4b66-8e2f-04d329fa8547")
+		(property "Reference" "C11"
+			(at 217.424 80.264 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22n"
+			(at 217.424 82.042 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "peml:C_Rect_L26.5mm_W7.0mm_P22.50mm_R76"
+			(at 215.5952 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://content.kemet.com/datasheets/KEM_F3034_R76.pdf"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "CAP PP FILM 22nF 2kV 5%"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFN" "KEMET"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "R76UN22204040J"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPN" "399-12621-ND"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "SPL" "https://www.digikey.com/en/products/detail/kemet/R76UN22204040J/5731112"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Tolerance" "5%"
+			(at 217.424 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Voltage" "2kV"
+			(at 217.424 85.598 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Dielectric" "PP"
+			(at 217.424 87.376 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Package" "~"
+			(at 219.71 89.535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "~"
+			(at 214.63 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a33ed5f4-da60-4888-9194-4893b8c37bca")
+		)
+		(pin "2"
+			(uuid "d0f637fe-de8f-4dd1-9779-c8be1ab5035b")
+		)
+		(instances
+			(project "cap_bank"
+				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
 					(reference "C11")
 					(unit 1)
 				)
@@ -8255,7 +10022,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb0c6417-5a23-4ccd-a26e-6c72dddd52d3")
-		(property "Reference" "C40"
+		(property "Reference" "C46"
 			(at 204.724 113.284 0)
 			(effects
 				(font
@@ -8390,7 +10157,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C40")
+					(reference "C46")
 					(unit 1)
 				)
 			)
@@ -8405,7 +10172,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ec206d98-271b-45a2-973c-d36072447ee1")
-		(property "Reference" "C39"
+		(property "Reference" "C34"
 			(at 204.724 103.124 0)
 			(effects
 				(font
@@ -8540,7 +10307,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C39")
+					(reference "C34")
 					(unit 1)
 				)
 			)
@@ -8555,7 +10322,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f072776b-3f2c-4ec2-a34c-b621bd5f9626")
-		(property "Reference" "C10"
+		(property "Reference" "C17"
 			(at 148.844 90.424 0)
 			(effects
 				(font
@@ -8690,7 +10457,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C10")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -8705,7 +10472,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f59f14ee-ed0e-4c72-ad51-0001cde85ab1")
-		(property "Reference" "C7"
+		(property "Reference" "C4"
 			(at 137.414 80.264 0)
 			(effects
 				(font
@@ -8840,7 +10607,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C7")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -8855,7 +10622,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb64b97a-f418-48ed-952a-45494ed05502")
-		(property "Reference" "C30"
+		(property "Reference" "C41"
 			(at 147.574 113.284 0)
 			(effects
 				(font
@@ -8990,7 +10757,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C30")
+					(reference "C41")
 					(unit 1)
 				)
 			)
@@ -9005,7 +10772,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ffa9f39a-9846-4dde-a6f0-b03bebf2967e")
-		(property "Reference" "C33"
+		(property "Reference" "C31"
 			(at 170.434 103.124 0)
 			(effects
 				(font
@@ -9140,7 +10907,7 @@
 		(instances
 			(project "cap_bank"
 				(path "/a57e7e15-149c-418f-a83f-046fc588a891"
-					(reference "C33")
+					(reference "C31")
 					(unit 1)
 				)
 			)

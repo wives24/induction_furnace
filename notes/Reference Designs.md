@@ -10,6 +10,9 @@
 - [12kW blog](https://www.instructables.com/12KW-Induction-Heater/)
 	- uses Magnetic Inc ZP48613TC toroid (same one I picked independently)
 	- resonant cap voltage is measured for PLL feedback
+- DIY 30kW [youtube](https://www.youtube.com/watch?v=OxAUeDabD4k)
+- [Induction heating, levitation](https://www.youtube.com/watch?v=eXyvl8Ua8Dw)
+	- good references to levitation papers
 
 
 ## Injection Transformer
@@ -35,7 +38,7 @@ Film Resonant Caps
 - 
 
 Be careful of AC voltage derating
-![[Pasted image 20251202195206.png]]
+![[film_cap_voltage_derating.png]]
 
 https://www.kyocera-avx.com/docs/techinfo/ApplicationNotes.pdf?utm_source=chatgpt.com
 

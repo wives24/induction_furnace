@@ -8,6 +8,6 @@ HV clearance
 
 [TI app note](https://www.ti.com/lit/ml/slup419/slup419.pdf?ts=1765347009471)
 
-![[Pasted image 20251210145802.png]]
+![[Creepage_clearance_rules.png]]
 IEC 60664-1
 IEC 62368-1

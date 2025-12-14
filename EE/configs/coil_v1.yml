@@ -1,0 +1,35 @@
+# Transformer configuration with windings array format
+# synthetic
+type: rod_tf  # type of magnetic element (geometry and inductor vs tranformer)
+winding_insulation_t: 0.5e-3  # radial spacing between primary and secondary windings [m]
+air_mesh_size: 1.0e-3  # maximum dimension of mesh in air [m]
+
+core:
+  r: 30.0e-3  # outer radius of central core [m]
+  h: 160.0e-3  # core winding area height [m]
+  corner_radius: 0.2e-3  # radius on all corners of the transformer [m]
+  mesh_size_factor: 2.0  # mesh size is this factor smaller than minimum transformer dimension
+  mu_r: 1.0      # Relative permeability of core material
+  rho_e: 7.0e-6  # Electrical resistivity of graphite [Ohm-m]
+
+bobbin:
+  tr: 10.0e-3  # bobbin radial thickness [m]
+  tz: 1.0e-3  # bobbin axial thickness [m]
+  mesh_size_factor: 5.0  # mesh size is this factor smaller than minimum bobbin dimension
+
+windings:
+- name: primary
+  N: 6  # number of turns
+  conductor_shape: hollow_rectangular  # conductor crossection shape
+  conductor_packing: rect_grid  # conductor packing geometry within each winding
+  winding_pattern: standard  # winding pattern: "standard" or "flyback"
+  conductor_dr: 10.0e-3 
+  conductor_dz: 14.5e-3
+  conductor_t: 0.7e-3 
+  conductor_corner_radius: 3.5e-3
+  num_layers: 1  # number of winding layers
+  num_turns_per_layer: 6  # turns per layer
+  insulation_t: 0.5e-3  # insulation thickness on each conductor
+  mesh_size_factor: 3.0  # mesh size is this factor smaller than conductor diameter
+  # layer_insulation_t: 0.2e-3  # insulation thickness between winding layers [m]
+

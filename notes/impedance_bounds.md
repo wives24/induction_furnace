@@ -20,3 +20,12 @@ Copper
 
 
 ![[copper_resistivity.jpg]]
+
+
+
+## Parasitics
+
+secondary leakage estimation
+[calculator](https://www.allaboutcircuits.com/tools/rectangle-loop-inductance-calculator/)
+
+- 12mm OD, 150-400mm loop --> 0.62uH

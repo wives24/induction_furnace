@@ -1,0 +1,18 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "04f63cbd-7c3d-4989-a236-9345b9cf094d")
+	(paper "A4")
+	(lib_symbols)
+	(text "boost converter to drive brushed pump motor"
+		(exclude_from_sim no)
+		(at 133.35 106.045 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a967cf51-e8bb-4d18-a9c1-82e711d8192c")
+	)
+)

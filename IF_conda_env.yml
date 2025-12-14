@@ -21,3 +21,4 @@ dependencies:
       - lcapy
       - openpyxl
       - git-filter-repo  # for git history cleanup
+      - "mag @ git+https://github.com/wives24/MAG.git"

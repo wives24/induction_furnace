@@ -1,0 +1,30 @@
+air_mesh_size: 0.001
+bobbin:
+  mesh_size_factor: 5.0
+  tr: 0.002
+core:
+  depth: 0.05
+  mesh_size_factor: 10
+  mu_r: 1000.0
+  rho_e: 10.0
+  ri: 0.027
+  ro: 0.042
+type: toroid_tf
+windings:
+- N: 16
+  conductor_d: 0.003
+  conductor_shape: circular
+  insulation_t: 0.0001
+  mesh_size_factor: 4
+  name: pri
+  type: poloidal
+  winding_pattern: CW
+  winding_pitch_angle_deg: 20.0
+- N: 1
+  conductor_d: 0.01
+  conductor_shape: hollow_circular
+  conductor_t: 0.001
+  insulation_t: 0.0001
+  mesh_size_factor: 2
+  name: sec
+  type: axial

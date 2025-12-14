@@ -1,0 +1,38 @@
+# Induction heater
+# synthetic
+type: induction_crucible
+coilform_r: 40.0e-3  # innnermost extent of winding [m]
+winding_insulation_t: 1.0e-3  # radial spacing between primary and secondary windings [m]
+air_mesh_size: 1.0e-3  # maximum dimension of mesh in air [m]
+
+# in this case the core is made of two distinct regions, the crucible and the contents
+core:
+  h: 150.0e-3  # core height [m]
+  layers:
+  - name: contents
+    dr: 23.0e-3   # radial thickness of contents [m]
+    mesh_size_factor: 10.0  # mesh size is this factor smaller than minimum transformer dimension
+    mu_r: 1.0               # Relative permeability of core material
+    rho_e: 1.0e+3   # Air
+  - name: crucuble
+    dr: 7.0e-3  # radial thickness of crucible [m]
+    mesh_size_factor: 5.0  # mesh size is this factor smaller than minimum transformer dimension
+    mu_r: 1.0               # Relative permeability of core material
+    rho_e: 1.0e-4               # Electrical resistivity of core material [Ohm-m]
+
+
+windings:
+- name: primary
+  N: 6  # number of turns
+  conductor_shape: hollow_rectangular  # conductor crossection shape
+  conductor_packing: rect_grid  # conductor packing geometry within each winding
+  winding_pattern: standard  # winding pattern: "standard" or "flyback"
+  conductor_dr: 10.0e-3 
+  conductor_dz: 14.5e-3
+  conductor_t: 0.7e-3 
+  conductor_corner_radius: 3.5e-3
+  num_layers: 1  # number of winding layers
+  num_turns_per_layer: 6  # turns per layer
+  insulation_t: 0.5e-3  # insulation thickness on each conductor
+  mesh_size_factor: 3.0  # mesh size is this factor smaller than conductor diameter
+  # layer_insulation_t: 0.2e-3  # insulation thickness between winding layers [m]

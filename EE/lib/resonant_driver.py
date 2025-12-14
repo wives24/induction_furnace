@@ -97,6 +97,9 @@ class ResonantDriver:
             + self.ee_config["Cr_ESR"]
         )
         # calculate the resonant frequency
+        # calculate the tank Q factor
+        Q_sec = 1 / R_sec_tot * np.sqrt(self.ee_config["L_coil"] / self.ee_config["Cr"])
+        self.ee_config["Q_sec"] = Q_sec
 
         f_des = self.phase_setpoint(
             R_sec_tot,

@@ -1,0 +1,43 @@
+# Example configuration for planar toroidal transformer
+type: toroid_tf  # type of magnetic element (geometry and inductor vs tranformer)
+air_mesh_size: 1.0e-3  # maximum dimension of mesh in air [m]
+
+core:
+  # Toroidal core dimensions
+  ri: 0.027  # Inner radius of toroidal core [m]
+  ro: 0.042  # Outer radius of toroidal core [m]
+  depth: 0.050           # Depth of simulation domain (5th arg in mi_probdef) [m]
+  mesh_size_factor: 10    # Mesh density factor for core
+  mu_r: 1.0e+3               # Relative permeability of core material
+  rho_e: 10.0               # Electrical resistivity of core material [Ohm-m]
+
+bobbin:
+  tr: 2.0e-3      # Bobbin radial thickness [m]
+  # tz: 1.0e-3      # Bobbin axial thickness [m]
+  mesh_size_factor: 5.0  # mesh size is this factor smaller than minimum bobbin dimension
+
+# note for toroids, only single layer windings are supported 
+windings:
+  - name: pri
+    type: poloidal  # poloidal or axial (N=1 only for axial)
+    N: 8
+    conductor_shape: circular  # circular or circular_hollow
+    # AWG: 22                  # Wire gauge for circular conductors
+    conductor_d: 7.0e-3      # Conductor diameter for circular [m] (overrides AWG)
+    # conductor_t: 0.7e-3      # Conductor thickness for hollow conductors [m]
+    insulation_t: 0.1e-3     # Insulation thickness [m]
+    mesh_size_factor: 4      # Mesh density factor
+    winding_pattern: CW  # winding pattern: "CW" or "CCW"
+    winding_pitch_angle_deg: 40.0  # angular pitch between turns [degrees]
+
+  - name: sec
+    type: axial  # poloidal or axial (N=1 only for axial)
+    N: 1
+    conductor_shape: hollow_circular  # circular or 
+    # AWG: 22                  # Wire gauge for circular conductors
+    conductor_d: 10.0e-3      # Conductor diameter for circular [m] (overrides AWG)
+    conductor_t: 1.0e-3      # Conductor thickness for hollow conductors [m]
+    insulation_t: 0.1e-3     # Insulation thickness [m]
+    mesh_size_factor: 2      # Mesh density factor
+    # winding_pattern: CW  # winding pattern: "CW" or "CCW"
+    # winding_pitch_angle_deg: 10.0  # angular pitch between turns [degrees]

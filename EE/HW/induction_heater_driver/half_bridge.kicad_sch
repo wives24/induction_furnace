@@ -1655,6 +1655,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text_box "TODO:\n- implement OCP\n\nNew parts \n- EPC2306\n- gate driver"
+		(exclude_from_sim no)
+		(at 231.14 30.48 0)
+		(size 31.75 31.75)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "e429cc28-1b93-4e1e-b4be-be0b8132cf52")
+	)
 	(symbol
 		(lib_id "peml_passives:CRCW06031R00FKEAHP")
 		(at 160.02 128.27 270)
@@ -1911,7 +1931,7 @@
 			(uuid "e416766d-414e-4431-a523-15e1b324addb")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "Q2")
 					(unit 1)
@@ -2057,7 +2077,7 @@
 			(uuid "6855b008-65a2-417d-b302-e1804251365c")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "R1")
 					(unit 1)
@@ -2207,7 +2227,7 @@
 			(uuid "2fb26737-490c-4ec8-a6c9-0d379c090a99")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "C4")
 					(unit 1)
@@ -2347,7 +2367,7 @@
 			(uuid "e9a42d01-1193-45e0-9849-7def71c8ecf8")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "U1")
 					(unit 1)
@@ -2488,7 +2508,7 @@
 			(uuid "5e4fcb51-d138-4c5d-9e55-4378573a1073")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "C3")
 					(unit 1)
@@ -2570,7 +2590,7 @@
 			(uuid "dc035266-34ed-49d5-af73-1b6867ac6496")
 		)
 		(instances
-			(project ""
+			(project "induction_heater_driver"
 				(path "/4a4d350d-8886-4083-afc6-4b49fb4e1662/876ef4ab-98e7-4587-95f9-89debc1f72ad"
 					(reference "Q1")
 					(unit 1)

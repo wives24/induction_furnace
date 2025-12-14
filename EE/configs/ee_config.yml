@@ -1,20 +1,22 @@
 Vin: 48.0
 I_in_max: 100.0
 F_res_des: 50.0e3  # desired switching frequency
+t_slew: 100.0e-9  # [s]  slew time
 L_coil: 2.0e-6
-Cr: 2.2e-6
+L_sec_lkg: 0.7e-6 # leakage inductance of secondary loop besides the coil
+Cr: 4.4e-6
 Cr_ESR: 0.5e-3  # ESR of resonant capacitor bank
 R_load: 20.0e-3  # load resistance
 
 XFMR:
   Al: 2700.0e-9  # [H/T^2]  # inductance factor
-  N_cores: 2  # number of cores stacked in axial direction
-  N_pri: 10  # number of primary turns
+  N_cores: 5  # number of cores stacked in axial direction
+  N_pri: 6  # number of primary turns
   N_sec: 1  # number of secondary turns
-  ESR_pri: 10.0e-3  # primary winding resistance
+  ESR_pri: 5.0e-3  # primary winding resistance
   ESR_sec: 1.0e-3  # secondary winding resistance
 
 H-bridge:
-  Rds_on: 10.0e-3  # [Ohm] MOSFET on resistance
+  Rds_on: 2.0e-3  # [Ohm] MOSFET on resistance
   dead_time: 50.0e-9  # [s] MOSFET dead time
   V_drive: 12.0  # [V] gate drive voltage

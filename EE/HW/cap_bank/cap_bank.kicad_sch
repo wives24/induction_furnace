@@ -1119,10 +1119,10 @@
 			(embedded_fonts no)
 		)
 	)
-	(text_box "C_tot: 0.264uF\nVmax DC: 4kV\nVmax AC: 1400 VRMS\nVmax AC (50kHz): 940 VRMS\nImax AC (50kHz): 76.8 ARMS\n\nbleed off tau: ~2.64s"
+	(text_box "C_tot: 0.264uF\nVmax DC: 4kV\nVmax AC: 1400 VRMS\n\n50kHz\nVmax AC: 940 VRMS\nImax AC: 76.8 ARMS\n20kHz\nVmax AC: 1400 VRMS\nImax AC: 48 ARMS\n\nbleed off tau: ~2.64s"
 		(exclude_from_sim no)
-		(at 106.68 53.34 0)
-		(size 35.56 17.78)
+		(at 106.68 43.18 0)
+		(size 33.02 31.75)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)

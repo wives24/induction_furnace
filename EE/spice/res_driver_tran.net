@@ -15,8 +15,8 @@ K2 L6 L7 0.99
 .ic I(L7)=0
 .inc driver_params.txt
 ;param Fsw=F_res_calc
-.param Fsw=49.8k
-;step param Fsw 56k 60k 100
+.param Fsw=52.5k
+;step param Fsw 52k 53k 200
 .step param R_load 4m 40m 2m
 .tran 0 100m 99.9m
 .backanno
